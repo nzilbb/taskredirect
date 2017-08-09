@@ -1,6 +1,6 @@
-<project name="experiment" default="all" basedir=".">
+<project name="taskredirect" default="all" basedir=".">
   <description>
-    JSite module - experiment redirection
+    JSite module - experiment task redirection
   </description>
   <property name="src" location=".."/>
   <property name="dist"  location="../.."/>
