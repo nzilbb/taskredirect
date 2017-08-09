@@ -1,0 +1,43 @@
+<module>
+  <default-name>Task Redirect</default-name>
+  <author>Robert Fromont</author>
+  <version>0.61</version>
+  <description>Redirector for web-based experiments.</description>
+  <keywords>language, games</keywords>
+  <default-groups>
+    <group>admin</group>
+    <group>user</group>
+    <group>anyone</group>
+  </default-groups>
+  <properties>
+  </properties> 
+  <blocks>
+    <block>
+      <version>0.1</version>
+      <page>admin/block_config</page>
+      <default-position>left</default-position>
+      <default-name>Configuration</default-name>
+      <default-groups>
+	<group>admin</group>
+      </default-groups>
+    </block>
+  </blocks>
+  <functions>
+    <function>
+      <name>Admin</name>
+      <pattern>^admin/.*</pattern>
+      <default-groups>
+	<group>admin</group>
+      </default-groups>
+    </function>
+ </functions>
+ <notifications>
+   <notification>
+     <name>start_task</name>
+     <event-pattern>start</event-pattern>
+     <entity-pattern>.*</entity-pattern>
+     <description>Start Task</description>
+     <hint>When a participant starts a task</hint>
+   </notification>
+ </notifications>
+</module>
