@@ -139,6 +139,10 @@ div.score {
     text-align: center;
     font-size: 28pt;
 }
+div.field {
+    font-size:18px;
+    padding-bottom: 15px;
+}
 div.field span.description, div.field input  {
     vertical-align: middle;
 }

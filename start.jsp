@@ -3,11 +3,12 @@
 %><%@ page import = "nz.net.fromont.hexagon.*" 
 %><%@ page import = "java.sql.*" 
 %><%@ page import = "java.security.MessageDigest" 
+%><%@ page import = "org.apache.commons.codec.binary.Hex" 
 %><%
 {
    Page pg = (Page) request.getAttribute("page");
    Site site = pg.getSite();
-   Module module = pg.getModule();
+   nz.net.fromont.hexagon.Module module = pg.getModule();
    User user = pg.getUser();
    Connection connection = pg.getConnection();
 
@@ -66,15 +67,16 @@
 			+ new java.util.Date().toString()) // with current time as a nonce
 		       .getBytes());
 	    byte[] hash = md5.digest();
-	    String workerId = javax.xml.bind.DatatypeConverter.printHexBinary(hash);
+	    String workerId = new String(Hex.encodeHex(hash));
 	    // start experiment
 	    PreparedStatement sql = pg.prepareStatement(
 	       "INSERT INTO " + module + "_participant"
-	       + " (worker_id, task_id, signature, email, started) VALUES (?,?,?,?,Now())");
+	       + " (worker_id, task_id, signature, email, started, client_id) VALUES (?,?,?,?,Now(),?)");
 	    sql.setString(1, workerId);
 	    sql.setString(2, request.getParameter("task_id"));
 	    sql.setString(3, request.getParameter("signature"));
 	    sql.setString(4, participantEmail);
+	    sql.setString(5, request.getParameter("client_id"));
 	    sql.executeUpdate();
 	    sql.close();
 	    sql = pg.prepareStatement("SELECT LAST_INSERT_ID()");

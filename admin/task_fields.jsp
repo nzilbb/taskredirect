@@ -61,5 +61,12 @@ pg.addBreadCrumb("Fields");
      required="true"
      size="30"
      />
-
+  <db:field
+     name="required"
+     label="${resources['Required']}"
+     type="integer"
+     access="readwrite"
+     optionValues="${resources['1:yes|0:no']}"
+     required="true"
+     />
 </db:table></c:set>

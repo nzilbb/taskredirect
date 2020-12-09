@@ -4,7 +4,7 @@
 %><%
 {
    Page pg = (Page) request.getAttribute("page");
-   Module module = pg.getModule();
+   nz.net.fromont.hexagon.Module module = pg.getModule();
    String task_id = request.getParameter("task_id");
    pg.set("task_id", task_id, false);
    String field = request.getParameter("field");

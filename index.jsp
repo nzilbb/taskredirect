@@ -5,7 +5,7 @@
 {
    Page pg = (Page) request.getAttribute("page");
    Site site = pg.getSite();
-   Module module = pg.getModule();
+   nz.net.fromont.hexagon.Module module = pg.getModule();
    User user = pg.getUser();
    Connection connection = pg.getConnection();
 

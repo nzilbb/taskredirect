@@ -41,3 +41,9 @@ CREATE TABLE {0}_participant_field (
   value varchar(200) NOT NULL default '',
   PRIMARY KEY  (task_id, participant_id, name)
 );
+
+/* version 0.62 */
+ALTER TABLE {0}_participant ADD COLUMN client_id VARCHAR(32) NULL;
+
+/* version 0.70 */
+ALTER TABLE {0}_task_field ADD COLUMN required tinyint default 0;

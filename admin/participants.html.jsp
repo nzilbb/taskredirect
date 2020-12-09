@@ -11,6 +11,7 @@
     <tr>
       <th class="email">${resources['Email']}</th>
       <th class="worker_id">${resources['Worker ID']}</th>
+      <th class="client_id">${resources['Client ID']}</th>
       <th class="started">${resources['Started']}</th>
       <c:forEach var="field" items="${fields}">
 	<th class="${field.name}"><a title="${resources['Filter']}" href="participants?task_id=${task_id}&field=${field.name}">${field.name}</a></th></c:forEach>
@@ -21,6 +22,7 @@
     <tr id="${participant.participant_id}">
       <td class="email">${participant.email}</td>
       <td class="worker_id">${participant.worker_id}</td>
+      <td class="worker_id">${participant.client_id}</td>
       <td class="started">${participant.started}</td>
       <c:forEach var="field" items="${fields}">
 	<td class="${field.name}" title="${field.name}">${participant[field.name]}</td></c:forEach>

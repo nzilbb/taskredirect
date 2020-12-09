@@ -1,7 +1,7 @@
 <module>
-  <default-name>Task Redirect</default-name>
+  <default-name>Experiment Redirect</default-name>
   <author>Robert Fromont</author>
-  <version>0.61</version>
+  <version>0.70</version>
   <description>Redirector for web-based experiments.</description>
   <keywords>language, games</keywords>
   <default-groups>
